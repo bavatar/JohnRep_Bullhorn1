@@ -6,7 +6,9 @@
 </head>
 <body>
 <a href="/">Show Message Details</a><br />
-Photo :<span th:text="${message.photo}" ></span><br />
+<!--Photo :<span th:text="${message.photo}" ></span><br />-->
+<!--<img src="http://www.tizag.com/pics/htmlT/sunset.gif" />-->
+Photo: <img th:src="${message.photo}"/></span/><br />
 Sender :<span th:text="${message.sentby}" ></span><br />
 Date :<p th:text="${message.date}" ></p><br />
 Message :<span th:text="${message.content}" ></span><br />
