@@ -6,7 +6,7 @@
 </head>
 <body>
 
-<form action="#" th:action="@{/process}" th:object="${message}" method="post">
+<form method="post" action="#" th:action="@{/add}" th:object="${message}" enctype="multipart/form-data">
     <input type="hidden" th:field="*{id}" />
     Sent By :<input type="text" th:field="*{sentby}" />
     <span th:if="${#fields.hasErrors('sentby')}"
@@ -21,6 +21,7 @@
           th:errors="*{date}"></span><br />
 
     <br />
+    <input type="file" name="file" />
     <input type="submit" value="Submit" />
 </form>
 

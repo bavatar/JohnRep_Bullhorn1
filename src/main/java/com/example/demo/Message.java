@@ -16,6 +16,10 @@ public class Message {
 
     @NotNull
     @Size(min=2)
+    private String photo;
+
+    @NotNull
+    @Size(min=2)
     private String sentby;
 
     @NotNull
@@ -59,5 +63,13 @@ public class Message {
 
     public void setContent(String content) {
         this.content = content;
+    }
+
+    public String getPhoto() {
+        return photo;
+    }
+
+    public void setPhoto(String photo) {
+        this.photo = photo;
     }
 }
