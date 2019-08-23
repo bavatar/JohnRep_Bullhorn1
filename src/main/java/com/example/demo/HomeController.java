@@ -54,7 +54,7 @@ public class HomeController {
     }
 
     @PostMapping("/add")
-    public String processActor(@ModelAttribute Message message,
+    public String processImage(@ModelAttribute Message message,
                                @RequestParam("file") MultipartFile file){
         if (file.isEmpty()){
             return "redirect:/add";
@@ -70,4 +70,15 @@ public class HomeController {
         return "redirect:/";
     }
 
+    @RequestMapping("/update/{id}")
+    public String updateMessage(@PathVariable("id") long id, Model model){
+        model.addAttribute("message", messageRepository.findById(id).get());
+        return "messageform";
+    }
+
+    @RequestMapping("/delete/{id}")
+    public String delCourse(@PathVariable("id") long id){
+        messageRepository.deleteById(id);
+        return "redirect:/";
+    }
 }

@@ -2,9 +2,25 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>Update Message</title>
 </head>
 <body>
-$END$
+form action="#" th:action="@{/process}" th:object="${message}" method="post">
+<input type="hidden" th:field="*{id}" />
+Sender :<input type="text" th:field="*{sentby}" />
+<span th:if="${#fields.hasErrors('title')}"
+      th:errors="*{sentby}"></span><br />
+Message :<input type="text" th:field="*{content}" />
+<span th:if="${#fields.hasErrors('message')}"
+      th:errors="*{message}"></span><br />
+Date :<input type="text" th:field="*{date}" />
+<span th:if="${#fields.hasErrors('date')}"
+      th:errors="*{date}"></span><br />
+<br />
+<input type="file" name="file" />
+
+<input type="submit" value="Submit" />
+</form>
+
 </body>
 </html>

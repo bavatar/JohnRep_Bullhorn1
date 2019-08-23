@@ -2,9 +2,16 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>Title</title>
 </head>
 <body>
-$END$
+<a href="/">Show Message Details</a><br />
+Photo :<span th:text="${message.photo}" ></span><br />
+Sender :<span th:text="${message.sentby}" ></span><br />
+Date :<p th:text="${message.date}" ></p><br />
+Message :<span th:text="${message.content}" ></span><br />
+
+<a th:href="@{/delete/{id}(id=${message.id})}">Delete this message</a>
+</body>
 </body>
 </html>
